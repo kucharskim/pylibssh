@@ -1551,7 +1551,9 @@ jobs:
     - name: COND
       run: echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
     - name: COND
-      run: echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}' | python -m json.tool
+      run: >-
+        echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
+        | python -m json.tool
 
   publish-pypi:
     name: Publish 🐍📦 ${{ needs.pre-setup.outputs.git-tag }} to PyPI
