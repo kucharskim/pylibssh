@@ -1536,6 +1536,7 @@ jobs:
 
   debug-vars:
     name: DEBUG
+    if: always()
     needs:
     - check
     - pre-setup  # transitive, for accessing settings
