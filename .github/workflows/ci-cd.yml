@@ -1534,6 +1534,25 @@ jobs:
           }}
         jobs: ${{ toJSON(needs) }}
 
+  debug-vars:
+    name: DEBUG
+    needs:
+    - check
+    - pre-setup  # transitive, for accessing settings
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: NEEDS
+      run: echo '{{ toJSON(needs) }}' | python -m json.tool
+    - name: NEEDS
+      run: echo '{{ toJSON(needs.pre-setup) }}' | python -m json.tool
+    - name: COND
+      run: echo '{{ needs.pre-setup.outputs.release-requested }}'
+    - name: COND
+      run: echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
+    - name: COND
+      run: echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}' | python -m json.tool
+
   publish-pypi:
     name: Publish 🐍📦 ${{ needs.pre-setup.outputs.git-tag }} to PyPI
     needs:
