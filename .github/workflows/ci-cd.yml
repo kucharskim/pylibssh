@@ -1543,22 +1543,22 @@ jobs:
 
     steps:
     - name: RAW NEEDS
-      run: echo '{{ needs }}'
+      run: echo '${{ needs }}'
     - name: TO JSON NEEDS
-      run: echo '{{ toJSON(needs) }}'
+      run: echo '${{ toJSON(needs) }}'
     - name: FROM JSON NEEDS
-      run: echo '{{ fromJSON(needs) }}'
+      run: echo '${{ fromJSON(needs) }}'
     - name: NEEDS
-      run: echo '{{ fromJSON(needs) }}' | python -m json.tool
+      run: echo '${{ fromJSON(needs) }}' | python -m json.tool
     - name: NEEDS
-      run: echo '{{ needs.pre-setup }}' | python -m json.tool
+      run: echo '${{ needs.pre-setup }}' | python -m json.tool
     - name: COND
-      run: echo '{{ needs.pre-setup.outputs.release-requested }}'
+      run: echo '${{ needs.pre-setup.outputs.release-requested }}'
     - name: COND
-      run: echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
+      run: echo '${{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
     - name: COND
       run: >-
-        echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
+        echo '${{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
         | python -m json.tool
 
   debug-success:
