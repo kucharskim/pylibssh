@@ -1556,6 +1556,38 @@ jobs:
         echo '{{ fromJSON(needs.pre-setup.outputs.release-requested) }}'
         | python -m json.tool
 
+  debug-success:
+    name: DEBUG
+    if: success()
+    needs:
+    - check
+    - pre-setup  # transitive, for accessing settings
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo success (immediate)
+
+  debug-always:
+    name: DEBUG
+    if: always()
+    needs:
+    - check
+    - pre-setup  # transitive, for accessing settings
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo always (immediate)
+
+  debug-post-always-no-condition:
+    name: DEBUG
+    needs:
+    - check
+    - pre-setup  # transitive, for accessing settings
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo post always
+
   publish-pypi:
     name: Publish 🐍📦 ${{ needs.pre-setup.outputs.git-tag }} to PyPI
     needs:
