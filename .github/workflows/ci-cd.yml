@@ -1569,7 +1569,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo success (immediate)
+    - run: >-
+        echo 'success (immediate)'
 
   debug-always:
     if: always()
@@ -1579,7 +1580,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo always (immediate)
+    - run: >-
+        echo 'always (immediate)'
 
   debug-post-always-no-condition:
     needs:
