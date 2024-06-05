@@ -1581,8 +1581,7 @@ jobs:
   debug-post-always-no-condition:
     name: DEBUG
     needs:
-    - check
-    - pre-setup  # transitive, for accessing settings
+    - debug-always
     runs-on: ubuntu-latest
 
     steps:
