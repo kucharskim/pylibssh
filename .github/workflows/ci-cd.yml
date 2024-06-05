@@ -1599,6 +1599,26 @@ jobs:
     steps:
     - run: echo post always
 
+  debug-post-always-w-previous-success-condition:
+    if: >-
+      needs.debug-always.result == 'success'
+    needs:
+    - debug-always
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo post always
+
+  debug-post-always-w-always-and-previous-success-condition:
+    if: >-
+      always() && needs.debug-always.result == 'success'
+    needs:
+    - debug-always
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo post always
+
   publish-pypi:
     name: Publish 🐍📦 ${{ needs.pre-setup.outputs.git-tag }} to PyPI
     needs:
