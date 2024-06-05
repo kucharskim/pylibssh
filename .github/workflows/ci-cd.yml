@@ -1535,7 +1535,6 @@ jobs:
         jobs: ${{ toJSON(needs) }}
 
   debug-vars:
-    name: DEBUG
     if: always()
     needs:
     - check
@@ -1557,7 +1556,6 @@ jobs:
         | python -m json.tool
 
   debug-success:
-    name: DEBUG
     if: success()
     needs:
     - check
@@ -1568,7 +1566,6 @@ jobs:
     - run: echo success (immediate)
 
   debug-always:
-    name: DEBUG
     if: always()
     needs:
     - check
@@ -1579,7 +1576,6 @@ jobs:
     - run: echo always (immediate)
 
   debug-post-always-no-condition:
-    name: DEBUG
     needs:
     - debug-always
     runs-on: ubuntu-latest
