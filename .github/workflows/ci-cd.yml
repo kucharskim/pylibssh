@@ -1542,8 +1542,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: RAW NEEDS
+      run: echo '{{ needs }}'
+    - name: TO JSON NEEDS
+      run: echo '{{ toJSON(needs) }}'
+    - name: FROM JSON NEEDS
+      run: echo '{{ fromJSON(needs) }}'
     - name: NEEDS
-      run: echo '{{ toJSON(needs) }}' | python -m json.tool
+      run: echo '{{ fromJSON(needs) }}' | python -m json.tool
     - name: NEEDS
       run: echo '{{ needs.pre-setup }}' | python -m json.tool
     - name: COND
