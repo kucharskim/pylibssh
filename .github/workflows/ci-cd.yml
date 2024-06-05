@@ -1543,7 +1543,7 @@ jobs:
 
     steps:
     - name: NEEDS
-      run: echo '{{ needs }}' | python -m json.tool
+      run: echo '{{ toJSON(needs) }}' | python -m json.tool
     - name: NEEDS
       run: echo '{{ needs.pre-setup }}' | python -m json.tool
     - name: COND
