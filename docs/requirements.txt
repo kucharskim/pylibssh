@@ -122,7 +122,6 @@ docutils==0.20.1 \
     # via
     #   myst-parser
     #   sphinx
-    #   sphinx-rtd-theme
 idna==3.8 \
     --hash=sha256:050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac \
     --hash=sha256:d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603
@@ -314,15 +313,14 @@ sphinx==7.4.7 \
     #   sphinx-ansible-theme
     #   sphinx-rtd-theme
     #   sphinxcontrib-apidoc
-    #   sphinxcontrib-jquery
     #   sphinxcontrib-towncrier
-sphinx-ansible-theme==0.10.3 \
-    --hash=sha256:21f56a96f0977cb6f1ee51f4cb397ae9466576f3020b73f5849c4ca293ba378d \
-    --hash=sha256:cdcee91338e0aa1439e74a392b8b89263bd9e1ea452e3d110a1a81d0a2ee31c2
+sphinx-ansible-theme==0.9.1 \
+    --hash=sha256:242cdad5c5bcc12e910b2ad9dc7c12f8c5d96e640f8b5676a011148997a70395 \
+    --hash=sha256:4a41345123ed739976cd310c8afa8c7799e311c2e4fc1ecd2739293ad5da89eb
     # via -r requirements.in
-sphinx-rtd-theme==2.0.0 \
-    --hash=sha256:bd5d7b80622406762073a04ef8fadc5f9151261563d47027de09910ce03afe6b \
-    --hash=sha256:ec93d0856dc280cf3aee9a4c9807c60e027c7f7b461b77aeffed682e68f0e586
+sphinx-rtd-theme==0.5.1 \
+    --hash=sha256:eda689eda0c7301a80cf122dad28b1861e5605cbf455558f3775e1e8200e83a5 \
+    --hash=sha256:fa6bebd5ab9a73da8e102509a86f3fcc36dec04a0b52ea80e5a033b2aba00113
     # via sphinx-ansible-theme
 sphinxcontrib-apidoc==0.5.0 \
     --hash=sha256:65efcd92212a5f823715fb95ee098b458a6bb09a5ee617d9ed3dead97177cd55 \
@@ -340,10 +338,6 @@ sphinxcontrib-htmlhelp==2.1.0 \
     --hash=sha256:166759820b47002d22914d64a075ce08f4c46818e17cfc9470a9786b759b19f8 \
     --hash=sha256:c9e2916ace8aad64cc13a0d233ee22317f2b9025b9cf3295249fa985cc7082e9
     # via sphinx
-sphinxcontrib-jquery==4.1 \
-    --hash=sha256:1620739f04e36a2c779f1a131a2dfd49b2fd07351bf1968ced074365933abc7a \
-    --hash=sha256:f936030d7d0147dd026a4f2b5a57343d233f1fc7b363f68b3d4f1cb0993878ae
-    # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1 \
     --hash=sha256:2ec2eaebfb78f3f2078e73666b1415417a116cc848b72e5172e596c871103178 \
     --hash=sha256:a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8
