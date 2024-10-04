@@ -626,7 +626,7 @@ jobs:
     strategy:
       matrix:
         os:
-        - macos-13
+        - macos-12
     uses: ./.github/workflows/reusable-cibuildwheel.yml
     with:
       os: ${{ matrix.os }}
