@@ -1,1 +1,2 @@
-Fix scp.put() usage in documentation sample -- by :user:`kucharskim`.
+Fixed the argument order in the ``scp.put()`` usage example
+-- by :user:`kucharskim`.
